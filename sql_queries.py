@@ -8,7 +8,7 @@ config.read('dwh.cfg')
 # DROP TABLES
 
 staging_events_table_drop = "DROP TABLE IF EXISTS staging_events"
-staging_songs_table_drop = "DROP TABLE IF EXISTS statging_songs"
+staging_songs_table_drop = "DROP TABLE IF EXISTS staging_songs"
 songplay_table_drop = "DROP TABLE IF EXISTS songplays"
 user_table_drop = "DROP TABLE IF EXISTS users"
 song_table_drop = "DROP TABLE IF EXISTS songs"
@@ -17,10 +17,42 @@ time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
 
-staging_events_table_create= ("""
+staging_events_table_create= ("""CREATE TABLE IF NOT EXISTS staging_events
+                                (
+                                    artist text,
+                                    auth text,
+                                    firstName text,
+                                    gender char,
+                                    itemInSession int,
+                                    lastName text,
+                                    length float,
+                                    level text,
+                                    location text,
+                                    method text,
+                                    page text,
+                                    registration float,
+                                    sessionId int,
+                                    song text,
+                                    status int,
+                                    ts bigint,
+                                    userAgent text,
+                                    userId int
+                                )
 """)
 
-staging_songs_table_create = ("""
+staging_songs_table_create = ("""CREATE TABLE IF NOT EXISTS staging_songs
+                                (
+                                    num_songs int,
+                                    artist_id text,
+                                    artist_latitude float,
+                                    artist_longitude float,
+                                    artist_location text,
+                                    artist_name text,
+                                    song_id text,
+                                    title text,
+                                    duration float,
+                                    year int
+                                )
 """)
 
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays 
