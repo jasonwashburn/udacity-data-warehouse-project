@@ -125,12 +125,12 @@ user and song play analysis.
 ON songplays.song_id = songs.song_id GROUP BY songplays.song_id, songs.title 
 ORDER BY COUNT(*) DESC LIMIT 5`
 
-    song_id	            title                                                   count
-    SOBONKR12A58A7A7E0	You're The One	                                        37
-    SOUNZHU12A8AE47481	I CAN'T GET STARTED	                                    9
-    SOHTKMO12AB01843B0	Catch You Baby (Steve Pitron & Max Sanna Radio Edit)	9
-    SOULTKQ12AB018A183	Nothin' On You [feat. Bruno Mars] (Album Version)	    8
-    SOLZOBD12AB0185720	Hey Daddy (Daddy's Home)	                            6
+    song_id             title                                                   count
+    SOBONKR12A58A7A7E0  You're The One                                          37
+    SOUNZHU12A8AE47481  I CAN'T GET STARTED                                     9
+    SOHTKMO12AB01843B0  Catch You Baby (Steve Pitron & Max Sanna Radio Edit)    9
+    SOULTKQ12AB018A183  Nothin' On You [feat. Bruno Mars] (Album Version)       8
+    SOLZOBD12AB0185720  Hey Daddy (Daddy's Home)                                6
 
 ### Top 5 Most Used Browsers
 `SELECT COUNT(*), user_agent FROM songplays GROUP BY user_agent ORDER BY 
