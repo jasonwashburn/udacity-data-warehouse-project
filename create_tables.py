@@ -19,10 +19,14 @@ def main():
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
 
+    print('Connecting to Database...')
     conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(*config['CLUSTER'].values()))
     cur = conn.cursor()
 
+    print('Dropping existing tables...')
     drop_tables(cur, conn)
+
+    print('Creating new tables...')
     create_tables(cur, conn)
 
     conn.close()

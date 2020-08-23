@@ -113,11 +113,15 @@ time_table_create = ("""CREATE TABLE IF NOT EXISTS time
 
 # STAGING TABLES
 
-staging_events_copy = ("""
-""").format()
+staging_events_copy = ("""COPY staging_events FROM '{}'
+                            iam_role {}
+                            format as json 'auto'
+""").format('s3://udacity-dend/log-data/2018/11/', config.get("IAM_ROLE", "ARN"))
 
-staging_songs_copy = ("""
-""").format()
+staging_songs_copy = ("""COPY staging_songs FROM '{}'
+                        iam_role {}
+                        format as json 'auto'
+""").format('s3://udacity-dend/song_data/A/B/C/', config.get("IAM_ROLE", "ARN"))
 
 # FINAL TABLES
 
