@@ -148,9 +148,9 @@ COUNT(*) DESC LIMIT 5`
 songplays.start_time GROUP BY time.hour ORDER BY COUNT(*) DESC LIMIT 5`
 
     hour	count
-    17	    39
-    15	    25
-    18	    25
-    16	    22
-    8       18
+    17      39
+    15      25
+    18      25
+    16      22
+     8      18
 
