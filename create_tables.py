@@ -19,8 +19,14 @@ def drop_tables(cur, conn):
 
 
 def create_tables(cur, conn):
-    """
-    Creates each table using the queries in `create_table_queries` list. 
+    """Creates each table using the queries in `create_table_queries` list. 
+
+    INPUT:
+    cur : cursor object from psycopg2 connection to redshift database
+    conn : connection object from psycopg2
+
+    OUTPUT:
+    Creates each table using create statements from sql_queries.py
     """
     for query in create_table_queries:
         cur.execute(query)
@@ -29,9 +35,9 @@ def create_tables(cur, conn):
 
 def main():
     """
-    - Drops (if exists) and Creates the sparkify database. 
+    - Drops (if exists) and Creates the redshift database. 
     
-    - Establishes connection with the sparkify database and gets
+    - Establishes connection with the redshift database and gets
     cursor to it.  
     
     - Drops all the tables.  

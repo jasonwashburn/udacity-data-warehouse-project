@@ -155,7 +155,7 @@ user_table_insert = ("""INSERT INTO users (user_id, first_name, last_name,
 
 song_table_insert = ("""INSERT INTO songs (song_id, title, artist_id, 
                         year, duration)
-                        SELECT song_id,
+                        SELECT DISTINCT song_id,
                         title,
                         artist_id,
                         year,
@@ -165,7 +165,7 @@ song_table_insert = ("""INSERT INTO songs (song_id, title, artist_id,
 
 artist_table_insert = ("""INSERT INTO artists (artist_id, name, location, 
                         latitude, longitude)
-                        SELECT artist_id,
+                        SELECT DISTINCT artist_id,
                         artist_name AS name,
                         artist_location AS location,
                         artist_latitude AS latitude,
