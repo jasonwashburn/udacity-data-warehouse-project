@@ -37,7 +37,7 @@ staging_events_table_create= ("""CREATE TABLE IF NOT EXISTS staging_events
                                     ts bigint,
                                     userAgent text,
                                     userId text
-                                )
+                                );
 """)
 
 staging_songs_table_create = ("""CREATE TABLE IF NOT EXISTS staging_songs
@@ -52,7 +52,7 @@ staging_songs_table_create = ("""CREATE TABLE IF NOT EXISTS staging_songs
                                     title text,
                                     duration float,
                                     year int
-                                )
+                                );
 """)
 
 songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays 
@@ -66,7 +66,7 @@ songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays
                             session_id int, 
                             location text,
                             user_agent text
-                            )
+                            );
 """)
 
 user_table_create = ("""CREATE TABLE IF NOT EXISTS users 
@@ -76,7 +76,7 @@ user_table_create = ("""CREATE TABLE IF NOT EXISTS users
                             last_name text, 
                             gender char, 
                             level text
-                        )
+                        );
 """)
 
 song_table_create = ("""CREATE TABLE IF NOT EXISTS songs 
@@ -86,7 +86,7 @@ song_table_create = ("""CREATE TABLE IF NOT EXISTS songs
                             artist_id text, 
                             year int, 
                             duration float
-                        )
+                        );
 """)
 
 artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists 
@@ -96,7 +96,7 @@ artist_table_create = ("""CREATE TABLE IF NOT EXISTS artists
                             location text, 
                             latitude float, 
                             longitude float
-                        )
+                        );
 """)
 
 time_table_create = ("""CREATE TABLE IF NOT EXISTS time 
@@ -108,7 +108,7 @@ time_table_create = ("""CREATE TABLE IF NOT EXISTS time
                             month int, 
                             year int,
                             weekday int
-                        )
+                        );
 """)
 
 # STAGING TABLES
