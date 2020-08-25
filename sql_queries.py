@@ -128,7 +128,7 @@ staging_songs_copy = ("""COPY staging_songs FROM {}
 songplay_table_insert = ("""INSERT INTO songplays (start_time, 
                             user_id, level, song_id, artist_id, session_id,
                             location, user_agent)
-                            SELECT DATEADD(s, e.ts/1000, '19700101') AS start_time,
+                            SELECT DISTINCT(DATEADD(s, e.ts/1000, '19700101')) AS start_time,
                             e.userId AS user_id,
                             e.level,
                             s.song_id,
@@ -145,7 +145,7 @@ songplay_table_insert = ("""INSERT INTO songplays (start_time,
 
 user_table_insert = ("""INSERT INTO users (user_id, first_name, last_name,
                         gender, level)
-                        SELECT s.userId AS user_id,
+                        SELECT DISTINCT s.userId AS user_id,
                         s.firstName AS first_name,
                         s.lastName AS last_name,
                         s.gender,
