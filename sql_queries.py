@@ -62,7 +62,7 @@ songplay_table_create = ("""CREATE TABLE IF NOT EXISTS songplays
                             user_id varchar(256) NOT NULL, 
                             level varchar(256), 
                             song_id varchar(256),
-                            artist_id varchar(256), 
+                            artist_id varchar(256) NOT NULL, 
                             session_id int, 
                             location varchar(256),
                             user_agent varchar(256)
